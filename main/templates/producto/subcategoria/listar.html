@@ -1,0 +1,55 @@
+{% extends 'partials/body.html' %} {% load static %}  {% block contenido %}
+<div class="wrapper">
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"> {{titulo}} </h3>
+            </div>
+  <div class="card-body">
+<table id="example1" class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Subcategoria</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for subcategoria in subcategorias %} {% if subcategoria.estado != "0" %}
+    <tr>
+      <td>{{subcategoria.get_subcategoria_display}}</td>
+      <td>{{subcategoria.get_estado_display}}</td>
+
+      <td>
+        <button  type="button" data-ident="{{subcategoria.id}}" class="btnEliminar btn btn-danger"
+                    data-bs-toggle="modal" data-bs-target="#modalConf">
+                    Eliminar</button>
+        <a class="btn btn-primary" href="{% url 'subcategoria-modificar' subcategoria.id %}"
+          >Modificar</a
+        >
+      </td>
+    </tr>
+    {% endif %} {% endfor %}
+  </tbody>
+</table>
+</div>
+<!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<a href="{% url 'subcategoria-crear' %}" class="btn btn-success w-25"
+  >Crear {{titulo}}</a
+>
+</div>
+{% endblock contenido %}

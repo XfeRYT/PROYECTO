@@ -1,0 +1,66 @@
+{% extends 'partials/body.html' %}  {% load static %}  {% block contenido %}
+<div class="wrapper">
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"> {{titulo}} </h3>
+            </div>
+  <div class="card-body">
+<table id="example1"  class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>ID Usuario</th>
+      <th>Dirección</th>
+      <th>Fecha de envio</th>
+      <th>Fecha de entrega</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for domicilio in domicilios %} {% if domicilio.estado != "0" %}
+    <tr>
+      <td>{{domicilio.usuario}}</td>
+      <td>{{domicilio.direccion}}</td>
+      <td>{{domicilio.fecha_envio}}</td>
+      <td>{{domicilio.fecha_entrega}}</td>
+      <td>{{domicilio.fecha}}</td>
+      <td>{{domicilio.get_estado_display}}</td>
+
+      <td>
+        <button  type="button" data-ident="{{domicilio.id}}" class="btnEliminar btn btn-danger"
+                    data-bs-toggle="modal" data-bs-target="#modalConf">
+                    Eliminar</button>
+        <a
+          class="btn btn-primary"
+          href="{% url 'domicilio-modificar' domicilio.id %}"
+          >+</a
+        >
+      </td>
+    </tr>
+    {% endif %} {% endfor %}
+  </tbody>
+</table>
+</div>
+<!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<a href="{% url 'domicilio-crear' %}" class="btn btn-success w-25"
+  >Crear {{titulo}}</a
+>
+</div>
+{% endblock contenido %}

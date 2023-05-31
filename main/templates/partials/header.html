@@ -1,0 +1,160 @@
+{% load static %}
+<header class="text-white p-0 m-0 d-block">
+  <div class="m-0 p-0  container-fluid w-100" style="background-color: #d4c6b5;">
+    <div class="d-flex w-100 mx-auto m-0 p-0 align-items-center" style="height: 100px;">
+      <div class="ms-4 d-flex position-relative">
+        <a href="{% url 'inicio' %}"><img src="/static/img/logo.png" alt="" width="180px" height="70px"></a>
+      </div>
+      <div class="ms-5 d-flex w-100 my-0 p-0 justify-content-start">
+
+        <p class="d-flex m-0 p-0 position-relative w-auto">
+          <button class="btn align-items-center border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+            <img class="m-0 p-0" src="/static/css/icons/search.svg" alt="Búscar" width="32px">
+          </button>
+        </p>
+        <div style="min-height: 120px;" class="d-flex position-relative w-auto align-items-center">
+          <div class="collapse collapse-horizontal" id="collapseWidthExample">
+            <div class="ms-5 card-body" style="width: 600px;">
+              <form class="w-75 col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <input
+                  type="search"
+                  class="form-control form-control-dark"
+                  placeholder="Buscar..."
+                  aria-label="Search"
+              /></form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="d-flex position-relative w-auto align-items-center justify-content-end">
+        <div class="d-flex ps-5"><a class="text-decoration-none d-flex align-items-center m-0 p-0" href="http://"><span class="me-3 " style="color: #68411d;">Domicilio</span><img class="m-0 p-0" src="/static/css/icons/box-seam.svg" alt="Carro" width="32px"></a></div>
+        <div class="d-flex ps-5"><a class="text-decoration-none d-flex align-items-center m-0 p-0" href="http://"><span class="me-3 " style="color: #68411d;">Ayuda</span><img class="m-0 p-0" src="/static/css/icons/person-fill-exclamation.svg" alt="Ayuda" width="32px"></a></div>
+        <div class="d-flex ps-5"><a class="text-decoration-none d-flex align-items-center m-0 p-0" href="http://"><span class="me-3 " style="color: #68411d;" >Carro</span><img class="m-0 p-0" src="/static/css/icons/cart3.svg" alt="Carro" width="32px"></a></div>
+        <div class="d-flex ms-5 px-5"><a class="text-decoration-none d-flex align-items-center m-0 p-0" href="http://"><span class="me-4 " style="color: #68411d;">Usuario</span><img class="m-0 p-0" src="/static/css/icons/person-circle.svg" alt="Usuario" width="32px"></a></div>
+
+      </div>
+    </div>
+    
+  </div>
+
+
+
+  
+
+  <div class="m-0 p-3 container-fluid w-100" style="background-color: #fcf9f5;">
+    <style>.direc{border: 1px solid transparent; background-color: transparent;}.direc:hover{border-color: #68411d; border-width: 1px; border-style: double; border-radius: 12px;}</style>
+    <div class="d-flex w-auto mx-auto mx-5 px-5 ps-5 justify-content-between ms-5 me-5" style="height: 70px;">
+      <style>
+        .dropdown {
+          position: relative; /* Establece el contenedor como posición relativa */
+        }
+        .dropdown-menu {
+          display: none; /* Oculta el menú por defecto */
+          position: absolute; /* Asegura una posición absoluta para el menú */
+          top: 100%; /* Posiciona el menú debajo del botón */
+          left: 0;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+          display: block; /* Muestra el menú al pasar el mouse por encima del contenedor */
+        }
+        .dropdown.open .dropdown-menu {
+          display: block; /* Muestra el menú cuando el dropdown está abierto */
+        }
+        .dropdown-item:hover{
+          border: 1px solid #68411d;
+          background: none;
+        }
+      </style>
+      <div class="dropdown d-flex mx-4 align-items-center">
+        <button class="p-3 m-1 direc text-center fw-bold" style="color: #68411d;" type="button"  aria-expanded="false">
+          Herramientas de corte
+        </button>
+        <ul class="dropdown-menu" style="background-color: #fcf9f5;">
+          <li><a class="dropdown-item" style="color: #68411d; font-weight: 600;" href="#">Sierra de Mano</a></li>
+          <li><a class="dropdown-item" style="color: #68411d;font-weight: 600;"  href="#">Lima</a></li>
+          <li><a class="dropdown-item" style="color: #68411d;font-weight: 600;"  href="#">Broca</a></li>
+          <li><a class="dropdown-item"style="color: #68411d;font-weight: 600;"  href="#">Macho de Rosca</a></li>
+          <li><a class="dropdown-item"  style="color: #68411d;font-weight: 600;"  href="#">Escariador</a></li>
+          <li><a class="dropdown-item" style="color: #68411d;font-weight: 600;"  href="#">Terraja de Roscar</a></li>
+          <li><a class="dropdown-item"style="color: #68411d;font-weight: 600;"   href="#">Tijeras</a></li>
+          <li><a class="dropdown-item"style="color: #68411d;font-weight: 600;"   href="#">Cortafrío</a></li>
+          <li><a class="dropdown-item" style="color: #68411d;font-weight: 600;"  href="#">Buril</a></li>
+          <li><a class="dropdown-item" style="color: #68411d;font-weight: 600;"  href="#">Cincel</a></li>
+          <li><a class="dropdown-item" style="color: #68411d;font-weight: 600;"  href="#">Cizalla</a></li>
+          <li><a class="dropdown-item"style="color: #68411d;font-weight: 600;"   href="#">Tenaza</a></li>
+        </ul>
+      </div>
+      <div class="dropdown d-flex mx-4 align-items-center">
+        <button class="p-3 m-1 direc text-center fw-bold" style="color: #68411d;" type="button"  aria-expanded="false">
+          Herramientas de golpe
+        </button>
+        <ul class="dropdown-menu " style="background-color: #fcf9f5;">
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Taladros</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Cinceles</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Punzones</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Pasadores</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Cuñas</a></li>
+
+        </ul>
+      </div>
+      <div class="dropdown d-flex mx-4 align-items-center">
+        <button class="p-3 m-1 direc text-center fw-bold" style="color: #68411d;" type="button"  aria-expanded="false">
+          Herramientas de trazo
+        </button>
+        <ul class="dropdown-menu " style="background-color: #fcf9f5;">
+          <li><a class="dropdown-item " href="#"  style="color: #68411d; font-weight: 600;">Punta de Trazar</a></li>
+          <li><a class="dropdown-item" href="#"  style="color: #68411d; font-weight: 600;">Gramil</a></li>
+          <li><a class="dropdown-item" href="#"  style="color: #68411d; font-weight: 600;" >Granete</a></li>
+          <li><a class="dropdown-item" href="#"  style="color: #68411d; font-weight: 600;">Guias</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;" >Compas</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Marmoles de Trazar</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Cubos de Trazado</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Calzos</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Escuadras Orientables</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Barnices de Trazador </a></li>
+
+
+        </ul>
+      </div>
+      <div class="dropdown d-flex mx-4 align-items-center">
+        <button class="p-3 m-1 direc text-center fw-bold" style="color: #68411d;" type="button"  aria-expanded="false">
+          Herramienta de montaje
+        </button>
+        <ul class="dropdown-menu " style="background-color: #fcf9f5;">
+          <li><a class="dropdown-item " href="#"  style="color: #68411d; font-weight: 600;">Llaves</a></li>
+          <li><a class="dropdown-item" href="#"  style="color: #68411d; font-weight: 600;">Destornilladores</a></li>
+          <li><a class="dropdown-item" href="#"  style="color: #68411d; font-weight: 600;">Tenazas</a></li>
+          <li><a class="dropdown-item" href="#"  style="color: #68411d; font-weight: 600;">Alicates</a></li>
+          <li><a class="dropdown-item" href="#"  style="color: #68411d; font-weight: 600;">Limas Profesionales</a></li>
+
+        </ul>
+      </div>
+      <div class="dropdown d-flex mx-4 align-items-center">
+        <button class="p-3 m-1 direc text-center fw-bold" style="color: #68411d;" type="button"  aria-expanded="false">
+          Herramientas de sujeción
+        </button>
+        <ul class="dropdown-menu " style="background-color: #fcf9f5;">
+          <li><a class="dropdown-item " href="#" style="color: #68411d; font-weight: 600;">Pinza</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Tornillo de Banco</a></li>
+          <li><a class="dropdown-item" href="#" style="color: #68411d; font-weight: 600;">Sargento</a></li>
+        </ul>
+      </div>
+      <div class="dropdown d-flex mx-4 align-items-center">
+        <button class="p-3 m-1 direc text-center fw-bold" style="color: #68411d;" type="button"  aria-expanded="false">
+          Herramientas Mecánicas
+        </button>
+        <ul class="dropdown-menu " style="background-color: #fcf9f5;">
+          <li><a class="dropdown-item " href="#"  style="color: #68411d; font-weight: 600;">Taladro</a></li>
+          <li><a class="dropdown-item" href="#"  style="color: #68411d; font-weight: 600;">Torno</a></li>
+          <li><a class="dropdown-item" href="#"  style="color: #68411d; font-weight: 600;">Sierra Eléctrica</a></li>
+          <li><a class="dropdown-item" href="#"  style="color: #68411d; font-weight: 600;">Esmeril</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</header>

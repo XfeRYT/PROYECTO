@@ -1,0 +1,60 @@
+{% extends 'partials/body.html' %}  {% load static %} {% block contenido %}
+<div class="wrapper">
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"> {{titulo}} </h3>
+            </div>
+  <div class="card-body">
+<table id="example1"  class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Cantidad</th>
+      <th>Detalle venta</th>
+      <th>Detalle compra</th>
+      <th>Estado</th>
+
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in stocks %} {% if stock.estado != "0" %}
+    <tr>
+      <td>{{stock.cantidad}}</td>
+      <td>{{stock.detalle_venta}}</td>
+      <td>{{stock.detalle_compra}}</td>
+      <td>{{stock.get_estado_display}}</td>
+
+      <td>
+        <button  type="button" data-ident="{{stock.id}}" class="btnEliminar btn btn-danger"
+                    data-bs-toggle="modal" data-bs-target="#modalConf">
+                    Eliminar</button>
+        <a class="btn btn-primary" href="{% url 'stock-modificar' stock.id %}"
+          >+</a
+        >
+      </td>
+    </tr>
+    {% endif %} {% endfor %}
+  </tbody>
+</table>
+</div>
+<!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<a href="{% url 'stock-crear' %}" class="btn btn-success w-25"
+  >Crear {{titulo}}</a
+>
+</div>
+{% endblock contenido %}

@@ -1,0 +1,73 @@
+{% extends 'partials/body.html' %}  {% load static %}  {% block contenido %}
+<div class="wrapper">
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"> {{titulo}} </h3>
+            </div>
+  <div class="card-body">
+<table id="example1"  class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Contraseña</th>
+      <th>Tipo de Documento</th>
+      <th>Documento</th>
+      <th>Teléfono</th>
+      <th>Dirección</th>
+      <th>Correo</th>
+      <th>Rol</th>
+      <th>Estado</th>
+
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for usuario in usuarios %} {% if usuario.estado != "0" %}
+    <tr>
+      <td>{{usuario.nombre}}</td>
+      <td>{{usuario.apellido}}</td>
+      <td>{{usuario.contraseña}}</td>
+      <td>{{usuario.get_tipo_documento_display}}</td>
+      <td>{{usuario.documento}}</td>
+      <td>{{usuario.telefono}}</td>
+      <td>{{usuario.direccion}}</td>
+      <td>{{usuario.correo}}</td>
+      <td>{{usuario.get_rol_display}}</td>
+      <td>{{usuario.get_estado_display}}</td>
+
+      <td>
+        <button  type="button" data-ident="{{usuario.id}}" class="btnEliminar btn btn-danger"
+                    data-bs-toggle="modal" data-bs-target="#modalConf">
+                    Eliminar</button>
+        <a
+          class="btn btn-primary"
+          href="{% url 'usuario-modificar' usuario.id %}"
+          >Modificar</a>
+      </td>
+    </tr>
+    {% endif %} {% endfor %}
+  </tbody>
+</table>
+</div>
+<!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<a href="{% url 'usuario-crear' %}" class="btn btn-success w-25"
+  >Crear {{titulo}}</a
+>
+</div>
+{% endblock contenido %}

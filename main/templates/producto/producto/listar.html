@@ -1,0 +1,71 @@
+{% extends 'partials/body.html' %}  {% load static %}  {% block contenido %}
+<div class="wrapper">
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"> {{titulo}} </h3>
+            </div>
+  <div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Color</th>
+          <th>Presentación</th>
+          <th>Material</th>
+          <th>Marca</th>
+          <th>Unidades</th>
+          <th>Categoria</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+          {% for producto in productos %}
+          {% if producto.estado != "0" %}
+            <tr>
+              <td>{{producto.nombre}}</td>
+              <td>{{producto.precio}}</td>
+              <td>{{producto.get_color_display}}</td>
+              <td>{{producto.get_presentacion_display}}</td>
+              <td>{{producto.get_material_display}}</td>
+              <td>{{producto.marca}}</td>
+              <td>{{producto.unidades}}</td>
+              <td>{{producto.categoria}}</td>
+              <td>{{producto.get_estado_display}}</td>
+              <td>
+                <button  type="button" data-ident="{{producto.id}}" class="btnEliminar btn btn-danger"
+          data-bs-toggle="modal" data-bs-target="#modalConf">
+          Eliminar</button>
+                <a
+                  class="btn btn-primary"
+                  href="{% url 'producto-modificar' producto.id %}"
+                  >Modificar</a
+                >
+              </td>
+            </tr>
+        {% endif %} 
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<a href="{% url 'producto-crear' %}" class="btn btn-success w-25"
+  >Crear {{titulo}}</a>
+</div>
+{% endblock contenido %}
