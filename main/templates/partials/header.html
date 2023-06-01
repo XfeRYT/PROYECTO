@@ -1,5 +1,5 @@
 {% load static %}
-<header class="text-white p-0 m-0 d-block">
+<header class="text-white position-sticky p-0 m-0 d-block" style="top: 0; z-index: 100;">
   <div class="m-0 p-0  container-fluid w-100" style="background-color: #d4c6b5;">
     <div class="d-flex w-100 mx-auto m-0 p-0 align-items-center" style="height: 100px;">
       <div class="ms-4 d-flex position-relative">
@@ -46,28 +46,7 @@
   <div class="m-0 p-3 container-fluid w-100" style="background-color: #fcf9f5;">
     <style>.direc{border: 1px solid transparent; background-color: transparent;}.direc:hover{border-color: #68411d; border-width: 1px; border-style: double; border-radius: 12px;}</style>
     <div class="d-flex w-auto mx-auto mx-5 px-5 ps-5 justify-content-between ms-5 me-5" style="height: 70px;">
-      <style>
-        .dropdown {
-          position: relative; /* Establece el contenedor como posición relativa */
-        }
-        .dropdown-menu {
-          display: none; /* Oculta el menú por defecto */
-          position: absolute; /* Asegura una posición absoluta para el menú */
-          top: 100%; /* Posiciona el menú debajo del botón */
-          left: 0;
-        }
-        
-        .dropdown:hover .dropdown-menu {
-          display: block; /* Muestra el menú al pasar el mouse por encima del contenedor */
-        }
-        .dropdown.open .dropdown-menu {
-          display: block; /* Muestra el menú cuando el dropdown está abierto */
-        }
-        .dropdown-item:hover{
-          border: 1px solid #68411d;
-          background: none;
-        }
-      </style>
+      
       <div class="dropdown d-flex mx-4 align-items-center">
         <button class="p-3 m-1 direc text-center fw-bold" style="color: #68411d;" type="button"  aria-expanded="false">
           Herramientas de corte
