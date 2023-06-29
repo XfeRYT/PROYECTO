@@ -7,6 +7,7 @@ from django.utils.translation import gettext_lazy as _
         
 class Cuenta_Pendiente(models.Model):
     nombre=models.CharField(max_length=45,verbose_name="Nombre")
+    nombre_producto = models.ForeignKey(Producto, blank=True,verbose_name=_("Nombre del Producto"), on_delete=models.CASCADE)
     fecha_inicio=models.DateField(verbose_name="Fecha de Inicio", help_text="MM/DD/AAAA", auto_now=True)
     valor=models.IntegerField(max_length=45,verbose_name="Valor")
     class Estado(models.TextChoices):
