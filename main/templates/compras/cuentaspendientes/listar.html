@@ -27,6 +27,7 @@
     {% if cuentapendiente.estado != "0" %}
       <tr>
         <td>{{cuentapendiente.nombre}}</td>
+        <td style="color: #68411d; text-align: center;">{{cuentapendiente.nombre_producto}}</td>
         <td>{{cuentapendiente.fecha_inicio}}</td>
         <td>{{cuentapendiente.valor}}</td>
         <td>{{cuentapendiente.get_estado_display}}</td>
